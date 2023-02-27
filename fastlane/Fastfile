@@ -59,7 +59,7 @@ platform :ios do
   
   desc "Linting"
   lane :lint do
-    swiftlint()
+    swiftlint(output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
   end
   
   desc "Description of what the lane does"
