@@ -36,7 +36,7 @@ platform :ios do
   desc "Test Coverage"
   lane :testCoverage do
     slather(
-    input_format: "bah",
+    input_format: "gcov",
     scheme: "iOSFirstApp",
     proj: "iOSFirstApp.xcodeproj"
   )
