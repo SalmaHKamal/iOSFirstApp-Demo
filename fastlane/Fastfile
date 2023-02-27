@@ -1,0 +1,36 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    build_app(scheme: "iOSFirstApp",
+    export_method: "validation",
+     export_options: {
+      destination: "upload"
+      # provisioningProfiles: {
+      #   "com.salma.iOSFirstApp" => "com.salma.iOSFirstApp"
+      # }
+    })
+    firebase_app_distribution(
+      app: "1:123456789:ios:abcd1234",
+      groups: "qa-team, trusted-testers"
+    )
+  end
+end
+
+# /Users/salmahassan/Downloads/iosfirstapp-fe651-a5fe14f86fb9.json
