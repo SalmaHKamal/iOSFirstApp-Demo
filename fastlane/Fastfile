@@ -27,10 +27,17 @@ platform :ios do
   
   desc "Test"
   lane :test do
-    scan(
+    run_tests(
       project: "iOSFirstApp.xcodeproj",
-      devices: ["iPhone 6s"]
-    )
+      scheme: "iOSFirstApp",
+      code_coverage: true,
+      derived_data_path: "./DerivedData",
+      output_directory: "./reports",
+      number_of_retries: 1)
+#     scan(
+#       project: "iOSFirstApp.xcodeproj",
+#       devices: ["iPhone 6s"]
+#     )
   end
   
   desc "Test Coverage"
