@@ -63,17 +63,9 @@ platform :ios do
   end
   
   desc "Description of what the lane does"
-  lane :custom_lane do
-    build_app(scheme: "iOSFirstApp",
-    export_method: "validation",
-     export_options: {
-      destination: "upload"
-      # provisioningProfiles: {
-      #   "com.salma.iOSFirstApp" => "com.salma.iOSFirstApp"
-      # }
-    })
+  lane :firebaseDistribution do
     firebase_app_distribution(
-        app: "1:1023208811872:android:84d94bee0643fce0ed8205",
+        app: "1:822983330861:ios:42a1b303365d440a3cfca4",
         service_credentials_file: "/Users/salmahassan/Study/Session/iosfirstapp-fe651-a5fe14f86fb9.json",
         groups: "test-fastlane",
         release_notes: "Lots of amazing new features to test out!"
