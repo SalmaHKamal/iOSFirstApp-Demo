@@ -67,7 +67,7 @@ platform :ios do
     firebase_app_distribution(
         app: "1:822983330861:ios:42a1b303365d440a3cfca4",
         service_credentials_file: "/Users/salmahassan/Study/Session/iosfirstapp-fe651-a5fe14f86fb9.json",
-        groups: "test-fastlane",
+        groups: "test-group",
         release_notes: "Lots of amazing new features to test out!"
       )
   end
