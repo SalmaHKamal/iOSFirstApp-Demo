@@ -16,6 +16,52 @@
 default_platform(:ios)
 
 platform :ios do
+  
+  desc "Build"
+  lane :build do
+    gym(scheme: "iOSFirstApp",
+    export_options: {
+                method: "development",
+                })
+  end
+  
+  desc "Test"
+  lane :test do
+    run_tests(
+      project: "iOSFirstApp.xcodeproj",
+      scheme: "iOSFirstApp",
+      code_coverage: true,
+      derived_data_path: "./DerivedData",
+      output_directory: "./reports",
+      number_of_retries: 1)
+#     scan(
+#       project: "iOSFirstApp.xcodeproj",
+#       devices: ["iPhone 6s"]
+#     )
+  end
+  
+  desc "Test Coverage"
+  lane :testCoverage do
+    slather(
+    input_format: "gcov",
+    scheme: "iOSFirstApp",
+    proj: "./iOSFirstApp.xcodeproj",
+      build_directory: "./DerivedData",
+      output_directory: "./reports"
+  )
+    
+#     xcov(
+#   project: "iOSFirstApp.xcodeproj",
+#   scheme: "iOSFirstApp",
+#   output_directory: "xcov_output"
+# )
+  end
+  
+  desc "Linting"
+  lane :lint do
+    swiftlint(output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
+  end
+  
   desc "Description of what the lane does"
   lane :custom_lane do
     build_app(scheme: "iOSFirstApp",
@@ -27,10 +73,10 @@ platform :ios do
       # }
     })
     firebase_app_distribution(
-      app: "1:123456789:ios:abcd1234",
-      groups: "qa-team, trusted-testers"
-    )
+        app: "1:1023208811872:android:84d94bee0643fce0ed8205",
+        service_credentials_file: "/Users/salmahassan/Study/Session/iosfirstapp-fe651-a5fe14f86fb9.json",
+        groups: "test-fastlane",
+        release_notes: "Lots of amazing new features to test out!"
+      )
   end
 end
-
-# /Users/salmahassan/Downloads/iosfirstapp-fe651-a5fe14f86fb9.json
