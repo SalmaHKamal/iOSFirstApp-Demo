@@ -19,7 +19,10 @@ platform :ios do
   
   desc "Build"
   lane :build do
-    gym(scheme: "iOSFirstApp")
+    gym(scheme: "iOSFirstApp",
+    export_options: {
+                method: "development",
+                })
   end
   
   desc "Test"
