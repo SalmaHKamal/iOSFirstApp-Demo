@@ -1,3 +1,4 @@
+
 pipeline {
     /*if you want to execute on specific node use:
         agent { label 'mac-mini-slave-local' }
@@ -13,35 +14,50 @@ pipeline {
 
     stages {
       stage('Checkout SCM') {
-        checkout scm
+          steps {
+              checkout scm
+          }
+        
       }
       
       stage('Build Project') {
-        script {
-          sh """
-          fastlane build
-          """
+          steps {
+              script {
+              sh """
+              fastlane build
+              """
+            }
+          }
       }
         
        stage('Testing') {
-        script {
+           steps {
+               script {
           sh """
           fastlane test
           """
+        }
+           }
       }
          
       stage('Testing Coverage Report') {
-        script {
+          steps {
+              script {
           sh """
           fastlane testCoverage
           """
+        }
+          }
       }
              
       stage('Linting') {
-        script {
+          steps {
+               script {
           sh """
           fastlane lint
           """
+        }
+          }
       }
         
         stage('Deploy to Firebase') {
