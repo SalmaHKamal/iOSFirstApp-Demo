@@ -45,7 +45,7 @@ platform :ios do
     slather(
     input_format: "gcov",
     scheme: "iOSFirstApp",
-    proj: "iOSFirstApp.xcodeproj",
+    proj: "./iOSFirstApp.xcodeproj",
       build_directory: "./DerivedData",
       output_directory: "./reports"
   )
