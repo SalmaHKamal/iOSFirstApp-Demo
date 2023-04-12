@@ -22,6 +22,7 @@ platform :ios do
     build_app(scheme: "iOSFirstApp",
       clean: true,
       skip_codesigning: true,
+      skip_package_ipa: true,
     export_options: {
                 method: "development",
                 })
