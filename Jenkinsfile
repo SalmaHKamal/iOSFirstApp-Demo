@@ -43,15 +43,15 @@ pipeline {
            }
       }
          
-//       stage('Testing Coverage Report') {
-//           steps {
-//               script {
-//           sh """
-//           fastlane testCoverage
-//           """
-//         }
-//           }
-//       }
+      stage('Testing Coverage Report') {
+          steps {
+              script {
+          sh """
+          fastlane testCoverage
+          """
+        }
+          }
+      }
              
       stage('Linting') {
           steps {
@@ -63,15 +63,15 @@ pipeline {
           }
       }
         
-        stage('Deploy to Firebase') {
-            steps {
-                script {
-                    sh """
-                    fastlane firebaseDistribution
-                    """
-                }
-            }
-        }
+//         stage('Deploy to Firebase') {
+//             steps {
+//                 script {
+//                     sh """
+//                     fastlane firebaseDistribution
+//                     """
+//                 }
+//             }
+//         }
     }
 }
        

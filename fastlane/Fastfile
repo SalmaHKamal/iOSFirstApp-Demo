@@ -46,7 +46,6 @@ platform :ios do
   desc "Test Coverage"
   lane :testCoverage do
     slather(
-    input_format: "gcov",
     scheme: "iOSFirstApp",
     proj: "./iOSFirstApp.xcodeproj",
       build_directory: "./DerivedData",
