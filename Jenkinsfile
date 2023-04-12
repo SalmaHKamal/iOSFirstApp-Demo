@@ -63,15 +63,15 @@ pipeline {
           }
       }
         
-        stage('Deploy to Firebase') {
-            steps {
-                script {
-                    sh """
-                    fastlane firebaseDistribution
-                    """
-                }
-            }
-        }
+//         stage('Deploy to Firebase') {
+//             steps {
+//                 script {
+//                     sh """
+//                     fastlane firebaseDistribution
+//                     """
+//                 }
+//             }
+//         }
     }
 }
        
