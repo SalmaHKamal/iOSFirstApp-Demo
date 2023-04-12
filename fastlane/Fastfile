@@ -19,7 +19,7 @@ platform :ios do
   
   desc "Build"
   lane :build do
-    gym(scheme: "iOSFirstApp",
+    build_app(scheme: "iOSFirstApp",
       clean: true,
       skip_codesigning: true,
     export_options: {
