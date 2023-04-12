@@ -21,8 +21,8 @@ platform :ios do
   lane :build do
     build_app(scheme: "iOSFirstApp",
       clean: true,
-      skip_codesigning: true,
-      skip_package_ipa: true,
+      # skip_codesigning: true,
+      # skip_package_ipa: true,
     export_options: {
                 method: "development",
                 })
